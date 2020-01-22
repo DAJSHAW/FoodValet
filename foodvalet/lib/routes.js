@@ -1,4 +1,4 @@
-FlowRouter.route('/',{
+FlowRouter.route('/', {
     name: 'home',
     action() {
         GAnalytics.pageview();
