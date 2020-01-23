@@ -1,6 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 
-Meteor.startup(function () {
+
+import '../collections/Recipes.js'
+import './publish'
+
+Meteor.startup(() => {
   // code to run on server at startup
   console.log(Meteor.settings.hello);
 });
