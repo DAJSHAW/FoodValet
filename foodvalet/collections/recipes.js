@@ -1,4 +1,6 @@
-//import { stringify } from "querystring";
+import { stringify } from "querystring";
+import SimpleSchema from 'simpl-schema';
+SimpleSchema.extendOptions(['autoform']);
 
 Recipes = new Mongo.Collection('recipes');
 
@@ -35,28 +37,28 @@ RecipeSchema = new SimpleSchema({
         defaultValue: false,
         optional: true,
         autoform: {
-            type: "hidden"
+          type: "hidden"
         },
     },
     author: {
         type: String,
         label: "Author",
         autoValue: function() {
-            return this.userId
+            return this.userId;
         },
         autoform: {
-            type: "hidden"
-        },
+          type: "hidden"
+        }
     },
     createdAt: {
         type: Date,
         label: "Created At",
         autoValue: function() {
-            return new Date()
+            return new Date();
         },
         autoform: {
-            type: "hidden"
-        },
+           type: "hidden"
+        }
     },
 });
 

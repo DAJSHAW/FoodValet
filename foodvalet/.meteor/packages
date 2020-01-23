@@ -29,7 +29,6 @@ dburles:collection-helpers
 raix:handlebar-helpers
 aldeed:collection2
 simple:json-routes
-aldeed:autoform
 accounts-ui
 accounts-password
 matb33:bootstrap-glyphicons
@@ -43,3 +42,4 @@ babel-compiler
 babel-runtime
 datariot:ganalytics
 
+aldeed:autoform
