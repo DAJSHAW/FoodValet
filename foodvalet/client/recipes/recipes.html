@@ -1,9 +1,8 @@
 <template name="Recipes">
-    TEST
     {{> NewRecipe}}
     <section class="recipes">
         {{#each recipes}} 
-            {{name}}
+            {{> Recipe}}
         {{/each}}
     </section>
 </template>
