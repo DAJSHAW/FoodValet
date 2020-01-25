@@ -1,6 +1,7 @@
 import { stringify } from "querystring";
 import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
+import { Mongo } from 'meteor/mongo';
 
 Recipes = new Mongo.Collection('recipes');
 
@@ -10,7 +11,7 @@ Recipes.allow({
     },
     update: function(userId, doc) {
         return !!userId;
-});
+    },
 
 Ingredient = new SimpleSchema({
     name: {
@@ -19,7 +20,7 @@ Ingredient = new SimpleSchema({
     amount: {
         type: String
     },
-});
+}),
 
 
 RecipeSchema = new SimpleSchema({
@@ -50,7 +51,7 @@ RecipeSchema = new SimpleSchema({
         },
         autoform: {
           type: "hidden"
-        }
+        },
     },
     createdAt: {
         type: Date,
@@ -60,19 +61,21 @@ RecipeSchema = new SimpleSchema({
         },
         autoform: {
            type: "hidden"
-        }
+        },
     },
 });
+
 Meteor.methods({
     toggleMenuItem: function(id, currentState) {
         Recipes.update(id, {
             $set: {
                 inMenu: !currentState
-            }
+            },
         });
     },
     deleteRecipe: function(id) {
         Recipes.remove(id);
-    }
+    },
 });
+
 Recipes.attachSchema( RecipeSchema );
