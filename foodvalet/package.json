@@ -11,7 +11,7 @@
     "@babel/runtime": "^7.8.3",
     "bcrypt": "^3.0.7",
     "fibers": "^4.0.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "meteor-node-stubs": "^1.0.0",
     "react": "^16.12.0",
     "react-addons-pure-render-mixin": "^15.6.2",
